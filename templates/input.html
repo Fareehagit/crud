@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %} Input Data {% endblock %}
+
+{% block header %} Add New Data {% endblock %}
+
+{% block body %}
+    <a href="{{ url_for('dashboard')}}" class="btn btn-primary" style="margin-bottom: 1.2rem;">Back</a>
+    <div class="card-body">
+        <form action="{{ url_for('input_data') }}" method="post">
+            <div class="form-group mb-2">
+                <label for="name" class="mb-2">Name:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">#</div>
+                    </div>
+                    <input type="text" id="name" class="form-control" name="name" placeholder="Input Name">
+                </div>
+
+            </div>
+            <div class="form-group mb-2">
+                <label for="email" class="mb-2">Email:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="email" id="email" class="form-control" name="email" placeholder="Input Email">
+                </div>
+
+            </div>
+            <div class="form-group mb-2">
+                <label for="telp" class="mb-2">No Telephone:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">#</div>
+                    </div>
+                    <input type="text" id="telp" class="form-control" name="telp" placeholder="Input Telephone">
+                </div>
+
+            </div>
+            <div class="form-group mb-2">
+                <label for="address" class="mb-2">Address:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" style="height: 100%;">#</div>
+                    </div>
+                    <textarea name="address" id="address" class="form-control align-text-top"  required = "required" placeholder="Input Address" autocapitalize="off" style="height: 100%;"></textarea>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-sm" name="submit" type="submit">Submit</button>
+                <button class="btn btn-danger btn-sm" name="reset" type="submit">Cancel</button>
+            </div>
+        </form>
+
+    </div>
+
+{% endblock %}
